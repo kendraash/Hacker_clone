@@ -1,7 +1,30 @@
 <h1>Hacker News</h1>
 
-<ul>
-  <% @links.each do |link| %>
-    <li> <%= link.title %> </li>
-  <% end %>
-</ul>
+<div class="container">
+  <table id="links_table">
+    <% @links.each do |link| %>
+      <tr>
+        <td>
+          1
+        </td>
+        <td>
+          <a href='<%= link.url %>'><%= link.title %></a>
+        </td>
+        <td>
+          3pts
+        </td>
+        <td>
+          4 comments
+        </td>
+        <td>
+          <%= link.created_at.strftime('%a %l') %>:<%= link.created_at.strftime('%M') %>
+        </td>
+        <td>
+          Upvote
+        </td>
+      </tr>
+
+    <% end %>
+  </ul>
+
+</div>
