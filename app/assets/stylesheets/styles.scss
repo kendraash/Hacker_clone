@@ -1,0 +1,54 @@
+$pink-color: #75515F; // pink
+$brown-color: #87745D;
+$green-color: #697B55;
+$blue-color: #3C4E55;
+
+
+.link_counter {
+  background-color: $pink-color;
+}
+
+.link_title {
+  background-color: $brown-color;
+}
+
+.link_points {
+  background-color: $pink-color;
+}
+
+.link_comments {
+  background-color: $green-color;
+}
+
+.link_time {
+  background-color: $blue-color;
+}
+
+.link_upvote  {
+  background-color: $pink-color;
+
+}
+
+table tr {
+  border: 10px;
+}
+
+#links_table .link_upvote {
+  padding-right: 7px;
+  padding-left: 7px;
+
+}
+
+#links_table  td .link_counter {
+  padding-left: 8px;
+}
+
+.link_counter {
+  text-align: center;
+}
+
+
+
+body {
+  background-color: #E5D7C7;
+}

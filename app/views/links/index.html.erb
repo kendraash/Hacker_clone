@@ -1,17 +1,17 @@
 <h1>Hacker News</h1>
 
 <div class="container">
-  <table id="links_table">
+  <table id="links_table" class = "u-full-width" style="padding: 0 10px;">
     <% counter = 0 %>
     <% @links.each do |link| %>
       <% counter+=1 %>
       <tr>
-        <td><%= counter %></td>
-        <td><a href='<%= link.url %>'><%= link.title %></a></td>
-        <td><%= link.points %></td>
-        <td><%= link_to 'comments', link_comments_path(link) %></td>
-        <td><%= link.created_at.strftime('%a %l') %>:<%= link.created_at.strftime('%M') %></td>
-        <td>
+        <td class="link_cell link_counter"><%= counter %></td>
+        <td class="link_cell link_title"><a href='<%= link.url %>'><%= link.title %></a></td>
+        <td class="link_cell link_points"><%= link.points %></td>
+        <td class="link_cell link_comments"><%= link_to 'comments', link_comments_path(link) %></td>
+        <td class="link_cell link_time"><%= link.created_at.strftime('%a %l') %>:<%= link.created_at.strftime('%M') %></td>
+        <td class="link_cell link_upvote">
           <%= form_for link do |f| %>
             <%= hidden_field(:f, :points, :value => '1') %>
             <input type="image" src='assets/upvote.png' value="" class='ui-glyphicon upvote-image'>
