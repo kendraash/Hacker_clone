@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+.inline-button {
+  margin-bottom: 0;
+}
+
+form {
+  margin-bottom: 0;
+}
+
+.upvote-image {
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: 0;
+}

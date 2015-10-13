@@ -4,24 +4,16 @@
   <table id="links_table">
     <% @links.each do |link| %>
       <tr>
+        <td>1</td>
+        <td><a href='<%= link.url %>'><%= link.title %></a></td>
+        <td><%= link.points %></td>
+        <td><%= link_to 'comments', link_comments_path(link) %></td>
+        <td><%= link.created_at.strftime('%a %l') %>:<%= link.created_at.strftime('%M') %></td>
         <td>
-          1
-        </td>
-        <td>
-
-          <a href='<%= link.url %>'><%= link.title %></a>
-        </td>
-        <td>
-          3pts
-        </td>
-        <td>
-           <%= link_to 'comments', link_comments_path(link) %>
-        </td>
-        <td>
-          <%= link.created_at.strftime('%a %l') %>:<%= link.created_at.strftime('%M') %>
-        </td>
-        <td>
-          Upvote
+          <%= form_for link do |f| %>
+            <%= hidden_field(:f, :points, :value => '1') %>
+            <input type="image" src='assets/upvote.png' value="" class='ui-glyphicon upvote-image'>
+          <% end %>
         </td>
       </tr>
 

@@ -18,6 +18,11 @@ class LinksController < ApplicationController
     end
   end
 
+  def update
+    @link = Link.find(params[:id])
+    @link.update(points: (@link.points + (params[:f][:points]).to_i))
+    redirect_to links_path
+  end
 
   private
   def link_params
