@@ -8,13 +8,14 @@
           1
         </td>
         <td>
+
           <a href='<%= link.url %>'><%= link.title %></a>
         </td>
         <td>
           3pts
         </td>
         <td>
-          4 comments
+           <%= link_to 'comments', link_comments_path(link) %>
         </td>
         <td>
           <%= link.created_at.strftime('%a %l') %>:<%= link.created_at.strftime('%M') %>

@@ -1,0 +1,16 @@
+<%= render 'form' %>
+
+<% if @link.comments.any? %>
+
+  <ul>
+    <% @link.comments.each do |comment| %>
+      <li><%= comment.body %></li>
+    <% end %>
+  </ul>
+
+<% else %>
+<p>
+  There are no comments for this post yet.
+</p>
+
+<% end %>
