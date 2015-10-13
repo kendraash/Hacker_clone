@@ -1,7 +1,9 @@
 class LinksController < ApplicationController
 
+
+
   def index
-    @links = Link.all
+    @links = Link.ranking
   end
 
   def new
@@ -11,6 +13,7 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    @link.created_at = Time.now
     if @link.save
       redirect_to links_path
     else
